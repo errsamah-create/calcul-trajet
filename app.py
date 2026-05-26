@@ -38,7 +38,7 @@ h1 {{
     font-weight: 900;
 
     margin-top: 40px;
-    margin-bottom: 90px;
+    margin-bottom: 150px;
 }}
 
 /* LABELS */
@@ -270,7 +270,7 @@ if calcul and depart and arrivee:
     # ---------------- RESULTAT ----------------
     if not resultat.empty:
 
-        c1, espace, c2 = st.columns([1,0.08,1])
+        c1, espace, c2 = st.columns([1,0.008,1])
 
         # ---------- DISTANCE ----------
         with c1:
