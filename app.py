@@ -216,7 +216,7 @@ if calcul and depart and arrivee:
     # ---------------- RESULTAT ----------------
     if not resultat.empty:
 
-        c1, espace, c2 = st.columns([1,0.1,1])
+        c1, espace, c2 = st.columns([1,0.008,1])
 
         # ---------- DISTANCE ----------
         with c1:
