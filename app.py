@@ -10,7 +10,7 @@ st.set_page_config(
 
 # ---------------- IMAGE FOND ----------------
 def get_base64(bin_file):
-    with open(bin_file, "rb") as f:
+    with open(bin_file, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
 
@@ -27,7 +27,7 @@ page_bg_img = f"""
 
 /* ESPACE HAUT */
 .block-container {{
-    padding-top: 4rem;
+    padding-top: 5rem;
 }}
 
 /* TITRE */
@@ -38,14 +38,16 @@ h1 {{
     font-weight: 900;
 
     margin-top: 40px;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
 }}
 
 /* LABELS */
 label, p {{
-    font-size: 32px !important;
+
+    font-size: 30px !important;
     color: black !important;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
+     margin-left: -300px;
 }}
 
 /* SELECTBOX */
@@ -65,80 +67,71 @@ label, p {{
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }}
 
-
-
 /* TEXTE INTERNE */
 .stSelectbox div[data-baseweb="select"] * {{
-    font-size: 24px !important;
+    font-size: 20px !important;
 }}
-
+/* ALIGNEMENT LISTE DÉROULANTE */
+div[data-baseweb="popover"] {{
+    margin-left: -300px !important;
+}}
 /* LARGEUR MENU */
 div[data-baseweb="select"] {{
-    width: 100% !important;
-    max-width: 1100px !important;
+    width: 1000px !important;
 }}
-
+/* MENU DÉROULANT EN BAS */
+div[data-baseweb="popover"] {{
+    top: auto !important;
+    bottom: auto !important;
+}}
 /* LISTE DÉROULANTE */
 div[data-baseweb="popover"] {{
-    width: 100% !important;
-    max-width: 1100px !important;
+    width: 850px !important;
+    margin-left: -300px !important;
 }}
 
-/* LISTBOX */
 div[role="listbox"] {{
-
-    width: 100% !important;
-
-    max-width: 1100px !important;
+    width: 850px !important;
+    max-width: 850px !important;
 
     border-radius: 20px !important;
-
     overflow-x: hidden !important;
 }}
-
 /* OPTIONS */
 div[role="option"] {{
-    font-size: 24px !important;
+    font-size: 28px !important;
     padding: 18px 25px !important;
 }}
-
-/* BOUTON */
+/* BOUTON CALCULER */
 .stButton > button {{
+    width: 300px;
+    height: 50px;
 
-    width: 320px;
-    height: 65px;
-
-    font-size: 22px !important;
+    font-size: 5px !important;
     font-weight: bold;
 
     border-radius: 25px;
+    border: none;
 
-    background-color: transparent !important;
-
+    background-color: transparent;
     color: #1e3a8a;
 
-    border: 3px solid #1e3a8a;
-
     display: block;
+    margin-left: 400px !important;
 
-    margin: 40px auto;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-top: 40px;
 }}
 
 /* HOVER */
 .stButton > button:hover {{
-
-    background-color: rgba(255,255,255,0.2) !important;
-
+    background-color: rgba(255,255,255,0.2);
     color: #111827;
 
     border: 3px solid #111827;
 }}
-
 /* RESULTATS */
 .result-box {{
-
     background-color: rgba(255,255,255,0.85);
 
     width: 260px;
@@ -147,11 +140,8 @@ div[role="option"] {{
     border-radius: 25px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
 
     text-align: center;
@@ -177,47 +167,6 @@ div[role="option"] {{
     font-weight: bold;
 }}
 
-/* RESPONSIVE TABLETTE */
-@media screen and (max-width: 768px) {{
-
-    h1 {{
-        font-size: 55px !important;
-    }}
-
-    label {{
-        font-size: 24px !important;
-    }}
-
-    .stSelectbox > div > div {{
-
-        max-width: 95vw !important;
-
-        min-height: 55px !important;
-    }}
-
-    .stButton > button {{
-
-        width: 250px !important;
-
-        height: 55px !important;
-
-        font-size: 20px !important;
-    }}
-
-    .result-box {{
-
-        width: 220px !important;
-
-        height: 190px !important;
-    }}
-
-    .distance-text,
-    .peage-text {{
-
-        font-size: 28px !important;
-    }}
-}}
-
 </style>
 """
 
@@ -230,7 +179,7 @@ df = pd.read_excel("Trajets.xlsx")
 sites = sorted(set(df["Départ"]).union(set(df["Arrivée"])))
 
 # ---------------- CENTRAGE ----------------
-col1, col2, col3 = st.columns([1,2,1])
+col1, col2, col3 = st.columns([1.5,2,1.5])
 
 with col2:
 
@@ -239,25 +188,22 @@ with col2:
 
     # ---------------- DEPART ----------------
     depart = st.selectbox(
-        "Départ",
-        sites,
-        index=None,
-        placeholder="Choisir un site"
-    )
-
+    "Départ",
+    sites,
+    index=None,
+    placeholder="Choisir un site"
+)
     # ESPACE
-    st.markdown("<div style='height:15px'></div>", unsafe_allow_html=True)
-
-    # ---------------- ARRIVEE ----------------
+    st.markdown("<div style='height:10px'></div>", unsafe_allow_html=True)
+# ---------------- ARRIVEE ----------------
     arrivee = st.selectbox(
-        "Arrivée",
-        sites,
-        index=None,
-        placeholder="Choisir un site"
-    )
-
-    # ---------------- BOUTON ----------------
-    calcul = st.button("Afficher le trajet")
+    "Arrivée",
+    sites,
+    index=None,
+    placeholder="Choisir un site"
+)
+ # ---------------- BOUTON ----------------
+calcul = st.button("Afficher le trajet")
 
 # ---------------- RECHERCHE ----------------
 if calcul and depart and arrivee:
@@ -270,7 +216,7 @@ if calcul and depart and arrivee:
     # ---------------- RESULTAT ----------------
     if not resultat.empty:
 
-        c1, espace, c2 = st.columns([1,0.008,1])
+        c1, espace, c2 = st.columns([1,0.1,1])
 
         # ---------- DISTANCE ----------
         with c1:
