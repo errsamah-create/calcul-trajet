@@ -50,27 +50,22 @@ label, p {{
 
 /* SELECTBOX */
 .stSelectbox > div > div {{
-
-    font-size: 22px !important;
-
-    min-height: 65px;
-
+    font-size: 20px !important;
+    min-height: 35px;
     border-radius: 25px;
-
     background-color: rgba(255,255,255,0.95);
 
-    width: 100% !important;
-    max-width: 1100px;
-
-    margin: auto;
+    width: 1100px;
+    margin-left: -300px;
 
     display: flex;
     align-items: center;
 
     border: 3px solid #d1d5db;
-
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }}
+
+
 
 /* TEXTE INTERNE */
 .stSelectbox div[data-baseweb="select"] * {{
