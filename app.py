@@ -33,7 +33,7 @@ page_bg_img = f"""
 /* TITRE */
 h1 {{
     text-align: center;
-    color: white;
+    color: white !important;
     font-size: 85px;
     font-weight: 900;
 
