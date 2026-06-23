@@ -27,13 +27,13 @@ page_bg_img = f"""
 
 /* ESPACE HAUT */
 .block-container {{
-    padding-top: 5rem;
+    padding-top: 15rem;
 }}
 
 /* TITRE */
 h1 {{
     text-align: center;
-    color: #111827;
+    color: white;
     font-size: 85px;
     font-weight: 900;
 
@@ -45,7 +45,7 @@ h1 {{
 label, p {{
 
     font-size: 30px !important;
-    color: black !important;
+    color: white !important;
     font-weight: 500 !important;
      margin-left: -300px;
 }}
