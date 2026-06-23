@@ -114,7 +114,7 @@ div[role="option"] {{
     border: none;
 
     background-color: transparent;
-    color: #1e3a8a;
+    color: #5B7FFF;
 
     display: block;
     margin-left: 400px !important;
