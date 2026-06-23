@@ -113,8 +113,8 @@ div[role="option"] {{
     border-radius: 25px;
     border: none;
 
-    background-color: transparent;
-    color: #5B7FFF;
+    background-color:  #5B7FFF;
+
 
     display: block;
     margin-left: 400px !important;
