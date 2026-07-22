@@ -21,7 +21,7 @@ page_bg_img = f"""
 [data-testid="stAppViewContainer"] {{
     background-image: url("data:image/png;base64,{get_base64('Photo.png')}");
     background-size: center ;
-    background-position: center;
+    background-position: center 40 px;
     background-repeat: no-repeat;
 }}
 
