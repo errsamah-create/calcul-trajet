@@ -20,7 +20,7 @@ page_bg_img = f"""
 /* IMAGE FOND */
 [data-testid="stAppViewContainer"] {{
     background-image: url("data:image/png;base64,{get_base64('Photo.png')}");
-    background-size: 80 %;
+    background-size: 105 %;
     background-position: center 40px;
     background-repeat: no-repeat;
 }}
