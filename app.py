@@ -99,8 +99,8 @@ div[role="listbox"] {{
 }}
 /* OPTIONS */
 div[role="option"] {{
-    font-size: 28px !important;
-    padding: 18px 25px !important;
+    font-size: 18px !important;
+    padding: 8px 12px !important;
 }}
 /* BOUTON CALCULER */
 .stButton > button {{
