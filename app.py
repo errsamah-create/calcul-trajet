@@ -85,26 +85,26 @@ div[data-baseweb="popover"] {{
     bottom: auto !important;
 }}
 /* LISTE DÉROULANTE */
-div[data-baseweb="popover"]{
+div[data-baseweb="popover"]{{
     width:1100px !important;
     max-width:1100px !important;
     margin-left:-300px !important;
-}
+}}
 
-div[role="listbox"]{
+div[role="listbox"]{{
     width:1100px !important;
     max-width:1100px !important;
     overflow-x:visible !important;
-}
+}}
 
 /* OPTIONS */
-div[role="option"]{
+div[role="option"]{{
     width:100% !important;
     white-space:nowrap !important;
     overflow:visible !important;
     text-overflow:clip !important;
     padding-right:10px !important;
-}
+}}
 /* OPTIONS */
 div[role="option"] {{
     font-size: 18px !important;
