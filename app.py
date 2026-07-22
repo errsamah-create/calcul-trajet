@@ -20,11 +20,10 @@ page_bg_img = f"""
 /* IMAGE FOND */
 [data-testid="stAppViewContainer"] {{
     background-image: url("data:image/png;base64,{get_base64('Photo.png')}");
-    background-size: center ;
-    background-position: center 40 px;
+    background-size: cover;
+    background-position: center -20px;
     background-repeat: no-repeat;
 }}
-
 /* ESPACE HAUT */
 .block-container {{
     padding-top: 15rem;
